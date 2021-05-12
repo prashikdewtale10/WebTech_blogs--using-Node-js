@@ -1,7 +1,7 @@
 const express =require('express');
 const { Shape } = require('three');
 const bodyParser=require('body-parser')
-const {ServiceWorker} = require('node-service-worker');
+
 
 
 const app = express()
@@ -30,12 +30,7 @@ app.use("/article",newsRouter)
 //     res.write("Hello Prashik")
 // })
 
-// service worker
-const sw = new ServiceWorker({
-    scriptURL: 'https://localhost/sw.js',
-    scope: 'http://localhost', // Primarily to resolve relative URLs
-    contents: 'console.log("hi");' // The JS of the service worker
-})
+
 
 // app listening 
 app.listen(port,()=>{
